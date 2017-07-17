@@ -5,6 +5,6 @@ ActionMailer::Base.smtp_settings = {
   :authentication       =>  :plain,
   :user_name            =>  'app72460031@heroku.com',
   :password             =>  'zdjcbnlc3013',
-  :domain               =>  'https://git.heroku.com/euphwiki.git',
+  :domain               =>  'http://euphwiki.herokuapp.com',
   :enable_starttls_auto  =>  true
 }

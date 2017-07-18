@@ -21,6 +21,7 @@ gem 'turbolinks'
 gem 'bootstrap'
 gem 'figaro'
 gem 'devise'
+gem 'gravtastic'
 
 group :development, :test do
   gem 'byebug'

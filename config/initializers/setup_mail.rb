@@ -3,8 +3,8 @@ ActionMailer::Base.smtp_settings = {
   :address              =>  'smtp.sendgrid.net',
   :port                 =>  '587',
   :authentication       =>  :plain,
-  :user_name            =>  'app72460031@heroku.com',
-  :password             =>  'zdjcbnlc3013',
+  :user_name            =>  ENV['SENDGRID_USERNAME'],
+  :password             =>  ENV['SENDGRID_PASSWORD'],
   :domain               =>  'http://euphwiki.herokuapp.com',
   :enable_starttls_auto  =>  true
 }

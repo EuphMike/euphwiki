@@ -22,6 +22,7 @@ gem 'bootstrap'
 gem 'figaro'
 gem 'devise'
 gem 'gravtastic'
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug'

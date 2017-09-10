@@ -23,6 +23,9 @@ gem 'figaro'
 gem 'devise'
 gem 'gravtastic'
 gem 'pundit'
+gem 'rolify'
+gem 'faker'
+gem 'stripe'
 
 group :development, :test do
   gem 'byebug'

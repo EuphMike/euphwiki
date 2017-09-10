@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
   # To override devise to allow editing registration fields 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def upgrade_current_user
+    current_user.premium!
+  end
+    
+  def downgrade_current_user
+    current_user.standard!
+  end
+  
   protected
 
   def configure_permitted_parameters

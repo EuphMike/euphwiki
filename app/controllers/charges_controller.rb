@@ -14,6 +14,8 @@ def create
     currency: 'usd'
   )
   
+  upgrade_current_user
+  
   flash[:notice] = "Thanks for all the money, #{current_user.email}! Feel free to pay me again."
   redirect_to root_path
  
@@ -23,6 +25,11 @@ def create
     redirect_to new_charge_path
 end
 
+  def downgrade
+    downgrade_current_user
+    redirect_to wikis_path
+  end
+
     
   def new
       
@@ -31,5 +38,5 @@ end
       description: "Premium Membership - #{current_user}",
       amount: 15_00
     }
-    end
+  end
 end

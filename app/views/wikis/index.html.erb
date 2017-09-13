@@ -6,6 +6,16 @@
         <div class="media">
           <div class="media-body">
             <h4 class="media-heading">
+              <p><%= link_to wiki.title, wiki %> <% if wiki.private == true %> <strong> - private</strong><% end %></p>
+            </div>
+          </div>
+        </div>
+          <% end %>
+          <% elsif current_user.standard? %>
+            <% @public_wikis.each do |wiki| %>
+            <div class="media">
+          <div class="media-body">
+            <div class="media-heading">
               <%= link_to wiki.title, wiki %>
             </h4>
             <small>
@@ -13,6 +23,7 @@
             </small>
           </div>
         </div>
+      <% end %>
       <% end %>
     </div>
     <div class="col-md-4">

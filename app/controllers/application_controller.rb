@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
     
   def downgrade_current_user
     current_user.standard!
+    current_user.wikis.update_all(:private => "false")
   end
   
   protected

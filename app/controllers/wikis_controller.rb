@@ -2,6 +2,7 @@ class WikisController < ApplicationController
 
   def index
     @wikis = Wiki.all
+    @public_wikis = @wikis.select { |wiki| wiki.private == false }
   end
 
   def show
@@ -14,6 +15,7 @@ class WikisController < ApplicationController
 
   def create
     @wiki = current_user.wikis.new(wiki_params)
+    @wiki.private = params[:wiki][:private]
 
     if @wiki.save
       redirect_to @wiki, notice: "Wiki was saved successfully."
@@ -28,7 +30,7 @@ class WikisController < ApplicationController
 
   def update
     @wiki = Wiki.find(params[:id])
-
+    @wiki.private = params[:wiki][:private]
     @wiki.assign_attributes(wiki_params)
 
     if @wiki.save

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171014195946) do
+ActiveRecord::Schema.define(version: 20170726231905) do
   
   create_table "collaborators", force: :cascade do |t|
     t.datetime "created_at", null: false
